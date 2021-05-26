@@ -8,7 +8,7 @@ const getBidsOnSpecificPet = async (req, res) => {
 
     // validate user input
     await petValidator.validateMongoId({ id: petId });
-
+    await petService.validatePetId(petId);
     /* we need to get the current userId from access token to check
      * if the users requesting data is the owner of the pet
      * But as there is no required auth middlewares or additional routes I will
@@ -19,7 +19,6 @@ const getBidsOnSpecificPet = async (req, res) => {
 
     return res.status(200).send({ status: true, code: '200', msg: '', data: bids });
   } catch (error) {
-    console.log(error);
     return res.status(400).send({ status: false, code: '400', msg: error.toString() });
   }
 };
