@@ -1,0 +1,4 @@
+{
+  "name": "pet-store-app",
+  "db-url": "mongodb://localhost:27017/petstore"
+}

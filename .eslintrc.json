@@ -1,0 +1,35 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "stric": "never",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["info", "warn", "error"]
+      }
+    ],
+    "global-require": ["warn"],
+    "no-use-before-define": "off",
+    "consistent-return": ["warn"],
+    "max-len": ["warn"],
+    "no-param-reassign": ["off"],
+    "no-trailing-spaces": ["off"],
+    "no-underscore-dangle": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "none"
+      }
+    ],
+    "camelcase": "warn",
+    "import/extensions": ["error"],
+    "import/no-absolute-path": ["error"],
+    "import/no-unresolved": ["error"],
+    "import/prefer-default-export": ["off"],
+    "no-unused-expressions": ["warn"]
+  }
+}

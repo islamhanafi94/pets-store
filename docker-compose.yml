@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  app:
+    container_name: pet_store_app
+    restart: always
+    image: pet_store_app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+      DB_URL: mongodb://mongo:27017/petstore
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+volumes:
+  mongodb:
